@@ -33,10 +33,11 @@ var SimpleHtmlGenerator = yeoman.generators.Base.extend({
     },
 
     structure: function () {
-        this.mkdir('css');
+        this.mkdir('www');
+        this.mkdir('www/css');
         this.mkdir('less');
-        this.mkdir('img');
-        this.mkdir('js');
+        this.mkdir('www/img');
+        this.mkdir('www/js');
     },
 
     files: function () {
@@ -55,6 +56,7 @@ var SimpleHtmlGenerator = yeoman.generators.Base.extend({
 
 
         this.copy('www/css/_main.css', 'www/css/main.css');
+        this.copy('www/img/styla.png', 'www/img/styla.png');
         this.copy('less/_main.less', 'less/main.less');
         this.copy('less/_variables.less', 'less/variables.less');
         this.template('www/_index.html', 'www/index.html', context);
