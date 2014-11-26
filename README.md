@@ -36,6 +36,8 @@ This task will run a server for you on http://localhost:9000.
 
 LESS files in `/less` will automatically be compiled into `www/css/main.css`. *If you create additional LESS files, make sure you `@import` them in `less/main.less`.
 
+You can also run `grunt less` to compile the LESS to CSS if you're not using the server.
+
 ## License
 
 MIT
