@@ -19,14 +19,14 @@ var SimpleHtmlGenerator = yeoman.generators.Base.extend({
 
         var prompts = [
             {
-                name: 'appName',
+                name: 'siteName',
                 message: 'What is your site\'s name?',
                 default: 'My Simple Website'
             }
         ];
 
         this.prompt(prompts, function (props) {
-            this.appName = props.appName;
+            this.siteName = props.siteName;
 
             done();
         }.bind(this));
@@ -41,18 +41,23 @@ var SimpleHtmlGenerator = yeoman.generators.Base.extend({
 
     files: function () {
 
-        this.copy('_package.json', 'package.json');
-        this.copy('_bower.json', 'bower.json');
+        var context = {
+            site_name: this.siteName
+        };
+
+        this.template('_package.json', 'package.json', context);
+        this.template('_bower.json', 'bower.json', context);
 
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
 
-        this.copy('_Gruntfile.js', 'Gruntfile.js');
+        this.template('_Gruntfile.js', 'Gruntfile.js', context);
 
 
         this.copy('www/css/_main.css', 'www/css/main.css');
-        this.copy('www/less/_main.less', 'www/less/main.less');
-        this.copy('www/_index.html', 'www/index.html');
+        this.copy('less/_main.less', 'less/main.less');
+        this.copy('less/_variables.less', 'less/variables.less');
+        this.template('www/_index.html', 'www/index.html', context);
     },
 
     end: function () {

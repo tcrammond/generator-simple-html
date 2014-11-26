@@ -1,5 +1,5 @@
 {
-    "name": "<%= app_name %>",
+    "name": "<%= _.camelize(site_name) %>",
     "version": "0.0.0",
     "dependencies": {
         "bootstrap": "~3.2"
