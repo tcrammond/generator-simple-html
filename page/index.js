@@ -11,9 +11,6 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('_page.html'),
-      this.destinationPath(this.name + '.html')
-    );
+      this.template('_page.html', 'page.html', {name: this.name});
   }
 });
