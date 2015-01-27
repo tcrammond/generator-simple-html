@@ -2,6 +2,8 @@
 
 > A generator for simple html sites, powered by [Yeoman](http://yeoman.io)
 
+This generator was for demonstration purposes. It's not intended to be used in a real project.
+
 ## Getting Started
 
 You will need: 
