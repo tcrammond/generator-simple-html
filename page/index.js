@@ -11,6 +11,6 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-      this.template('_page.html', 'page.html', {name: this.name});
+      this.template('_page.html', 'page.html', {page_name: this.name});
   }
 });
