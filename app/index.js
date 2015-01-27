@@ -14,7 +14,7 @@ var SimpleHtmlGenerator = yeoman.generators.Base.extend({
 
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Styla !'
+            'Hello! This is just an example generator.'
         ));
 
         var prompts = [
