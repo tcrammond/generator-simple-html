@@ -21,7 +21,7 @@ npm install -g generator-simple-html
 In your *empty* project folder, run
 
 ```
-yo generator-simple-html
+yo simple-html
 ```
 
 You will be taken through some prompts and your project will be generated.
